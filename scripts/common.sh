@@ -39,6 +39,9 @@ cat <<EOF | sudo tee /etc/docker/daemon.json
 }
 EOF
 
+# Add docker group to USER
+sudo usermod -aG docker ${USER}
+
 sudo systemctl enable docker
 sudo systemctl daemon-reload
 sudo systemctl restart docker
