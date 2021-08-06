@@ -64,3 +64,11 @@ sudo apt-get install -y kubelet=$KUBERNETES_VERSION kubectl=$KUBERNETES_VERSION 
 
 sudo apt-mark hold kubelet kubeadm kubectl
 
+
+# install Helm
+curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3
+chmod +x get_helm.sh
+bash get_helm.sh
+rm get_helm.sh
+
+echo "Helm Installed Successfully"
