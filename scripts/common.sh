@@ -9,6 +9,9 @@ sudo swapoff -a
 # keeps the swaf off during reboot
 sudo sed -i '/ swap / s/^\(.*\)$/#\1/g' /etc/fstab
 
+# prevents frontend from trying to access stdin
+export DEBIAN_FRONTEND=noninteractive
+
 sudo apt-get update -y
 sudo apt-get install -y \
     apt-transport-https \
